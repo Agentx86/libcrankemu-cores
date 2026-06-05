@@ -1,0 +1,97 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/nstbayless/libcrankemu-cores/main/core.schema.json",
+    "title": "CrankEmu core descriptor",
+    "description": "Describes a single emulator core, the systems it emulates, its release artifact, and how to unpack it.",
+    "type": "object",
+    "properties": {
+        "systems": {
+            "type": "object",
+            "description": "Map of system code to its human-readable display name (e.g. \"a26\": \"Atari 2600\").",
+            "minProperties": 1,
+            "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+            }
+        },
+        "name": {
+            "type": "string",
+            "description": "Human-readable name.",
+            "minLength": 1
+        },
+        "version": {
+            "type": "string",
+            "description": "Release version of the core (e.g. \"v1.0.0\").",
+            "minLength": 1
+        },
+        "unzip": {
+            "type": "object",
+            "description": "Map of file in archive to destination path relative to /Shared/Emulation. The full in-archive path is not needed if a suffix would be unambiguous.",
+            "minProperties": 1,
+            "additionalProperties": {
+                "type": "string",
+                "minLength": 1
+            }
+        },
+        "ce-version": {
+            "type": "integer",
+            "description": "ABI libcrankemu version.",
+            "minimum": 0
+        },
+        "ce-version-min": {
+            "type": "integer",
+            "description": "Earliest backward-compatible libcrankemu version.",
+            "minimum": 0
+        },
+        "description": {
+            "type": "string",
+            "description": "Human-readable description."
+        },
+        "timestamp": {
+            "type": "string",
+            "description": "Build/release time, formatted \"YYYY-MM-DD HH:MM:SS\".",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "size-download": {
+            "type": "integer",
+            "description": "Size of the zip in bytes.",
+            "minimum": 0
+        },
+        "href": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL for zip download.",
+            "pattern": "^https?://"
+        },
+        "license": {
+            "type": "string",
+            "description": "License identifier",
+            "minLength": 1
+        },
+        "license-href": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the full license text.",
+            "pattern": "^https?://"
+        },
+        "maintainer": {
+            "type": "string",
+            "description": "Human-readable maintainer name",
+            "minLength": 1
+        },
+        "genAI": {
+            "type": "string",
+            "description": "LLM/GenAI disclosure."
+        }
+    },
+    "required": [
+        "systems",
+        "name",
+        "version",
+        "unzip",
+        "ce-version",
+        "ce-version-min",
+        "href",
+        "maintainer"
+    ]
+}

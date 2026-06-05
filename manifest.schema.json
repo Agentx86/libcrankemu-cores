@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/nstbayless/libcrankemu-cores/main/manifest.schema.json",
+    "title": "libcrankemu core manifest",
+    "description": "Index of available cores. Each entry points at a core's own json descriptor.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "title": "Core listing",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Human-readable name",
+                "minLength": 1
+            },
+            "maintainer": {
+                "type": "string",
+                "description": "Person or group responsible for the core.",
+                "minLength": 1
+            },
+            "href": {
+                "type": "string",
+                "format": "uri",
+                "description": "URL to the core's ce.json descriptor: https://raw.githubusercontent.com/nstbayless/libcrankemu-cores/main/core.schema.json",
+                "pattern": "^https?://"
+            }
+        },
+        "required": ["name", "maintainer", "href"],
+        "additionalProperties": false
+    }
+}
