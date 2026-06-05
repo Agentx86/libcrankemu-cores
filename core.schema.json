@@ -81,7 +81,7 @@
         },
         "genAI": {
             "type": "string",
-            "description": "LLM/GenAI disclosure."
+            "description": "LLM/GenAI disclosure. A simple yes/no/unknown suffices. May list models in parentheses, e.g. \"yes (claude-opus-4.8)\", \"yes (self-hosted gemma-4b)\". Include only the latest model version used."
         }
     },
     "required": [
