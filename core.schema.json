@@ -45,7 +45,7 @@
         },
         "description": {
             "type": "string",
-            "description": "Human-readable description."
+            "description": "Human-readable description. This is a good place to give kudos too."
         },
         "timestamp": {
             "type": "string",
