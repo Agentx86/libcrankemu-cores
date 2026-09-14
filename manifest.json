@@ -3,5 +3,10 @@
         "name": "StellaPD",
         "maintainer": "Sodium",
         "href": "https://raw.githubusercontent.com/nstbayless/StellaPD/refs/heads/main/ce.json"
+    },
+    {
+        "name": "FamiCrank",
+        "maintainer": "Giorgio Pomettini",
+        "href": "https://raw.githubusercontent.com/pomettini/nofrendo/refs/heads/master/ce.json"
     }
 ]
